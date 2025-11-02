@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Utility meters</ion-card-title>
+      <ion-card-subtitle>Vend prepaid credits instantly</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let meter of meters">
+          <ion-icon slot="start" [name]="meter.type === 'Electricity' ? 'flash-outline' : meter.type === 'Water' ? 'water-outline' : 'flame-outline'" color="primary"></ion-icon>
+          <ion-label>
+            <h2>{{ meter.meterId }}</h2>
+            <p>{{ meter.type }} • Last top up {{ meter.lastTopUp }}</p>
+          </ion-label>
+          <ion-badge slot="end" color="success">{{ meter.balance | number: '1.0-0' }} units</ion-badge>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary">Purchase credits</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

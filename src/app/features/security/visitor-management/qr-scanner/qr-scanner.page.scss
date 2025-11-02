@@ -1,0 +1,25 @@
+.scanner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanner-card {
+  text-align: center;
+  background: #fff;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+}
+
+.scanner-icon {
+  font-size: 3rem;
+  color: var(--ion-color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.result {
+  margin-top: var(--spacing-lg);
+}

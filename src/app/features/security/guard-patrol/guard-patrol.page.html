@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Guard Patrol Planner</ion-card-title>
+      <ion-card-subtitle>Ensure every checkpoint is covered on time</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let checkpoint of checkpoints">
+        <ion-icon slot="start" name="walk-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h2>{{ checkpoint.name }}</h2>
+          <p>{{ checkpoint.dueTime }}</p>
+        </ion-label>
+        <ion-chip slot="end" [color]="checkpoint.status === 'Completed' ? 'success' : 'warning'">
+          {{ checkpoint.status }}
+        </ion-chip>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" fill="outline" color="primary">
+      Start next patrol route
+    </ion-button>
+  </ion-card>
+</ion-content>

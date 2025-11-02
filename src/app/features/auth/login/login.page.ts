@@ -78,6 +78,9 @@ export class LoginPage implements OnInit {
       case UserRole.SECURITY:
         this.router.navigate(['/dashboard/security']);
         break;
+      case UserRole.STAFF:
+        this.router.navigate(['/helpdesk/work-orders']);
+        break;
       default:
         this.router.navigate(['/']);
     }

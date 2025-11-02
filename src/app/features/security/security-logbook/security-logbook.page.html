@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Security Logbook</ion-card-title>
+      <ion-card-subtitle>Maintain a digital, searchable record</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let entry of logEntries">
+        <ion-icon slot="start" [name]="entry.category === 'incident' ? 'warning-outline' : entry.category === 'patrol' ? 'walk-outline' : 'people-circle-outline'" [color]="entry.category === 'incident' ? 'danger' : entry.category === 'patrol' ? 'tertiary' : 'primary'"></ion-icon>
+        <ion-label>
+          <h2>{{ entry.description }}</h2>
+          <p>{{ entry.guard }} • {{ entry.time }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

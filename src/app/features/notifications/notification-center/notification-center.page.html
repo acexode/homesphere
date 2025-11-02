@@ -1,0 +1,18 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Notification Center</ion-card-title>
+      <ion-card-subtitle>All alerts and updates in one place</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let notification of notifications">
+        <ion-icon slot="start" [name]="notification.type === 'security' ? 'shield-checkmark-outline' : notification.type === 'finance' ? 'card-outline' : notification.type === 'helpdesk' ? 'construct-outline' : 'megaphone-outline'" [color]="notification.type === 'security' ? 'primary' : notification.type === 'finance' ? 'warning' : notification.type === 'helpdesk' ? 'success' : 'tertiary'"></ion-icon>
+        <ion-label>
+          <h2>{{ notification.title }}</h2>
+          <p>{{ notification.message }}</p>
+        </ion-label>
+        <ion-note slot="end">{{ notification.time }}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

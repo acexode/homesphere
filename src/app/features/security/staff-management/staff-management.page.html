@@ -1,0 +1,30 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Staff Attendance</ion-card-title>
+      <ion-card-subtitle>Track daily help, drivers, and service providers</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="table">
+        <ion-row class="header">
+          <ion-col>Name</ion-col>
+          <ion-col>Role</ion-col>
+          <ion-col>Assigned To</ion-col>
+          <ion-col>Check-in</ion-col>
+          <ion-col>Check-out</ion-col>
+          <ion-col>Status</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let member of staff">
+          <ion-col>{{ member.name }}</ion-col>
+          <ion-col>{{ member.role }}</ion-col>
+          <ion-col>{{ member.assignedTo }}</ion-col>
+          <ion-col>{{ member.checkIn }}</ion-col>
+          <ion-col>{{ member.checkOut }}</ion-col>
+          <ion-col>
+            <ion-badge [color]="member.status === 'Onsite' ? 'success' : 'medium'">{{ member.status }}</ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Work orders</ion-card-title>
+      <ion-card-subtitle>Track vendor assignments &amp; progress</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let order of orders">
+        <ion-label>
+          <h2>{{ order.id }} — {{ order.vendor }}</h2>
+          <p>{{ order.scheduledFor }}</p>
+          <ion-progress-bar [value]="order.progress / 100"></ion-progress-bar>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

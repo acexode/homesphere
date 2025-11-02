@@ -1,0 +1,11 @@
+.recon-table {
+  .header {
+    font-weight: 600;
+    background: var(--ion-color-light-shade);
+  }
+
+  ion-row {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--ion-color-light-shade);
+  }
+}

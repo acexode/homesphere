@@ -1,0 +1,31 @@
+.register-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  background: #fff;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 720px;
+  width: 100%;
+}
+
+.register-form {
+  margin-top: var(--spacing-lg);
+}
+
+.form-field {
+  --border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.login-redirect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}

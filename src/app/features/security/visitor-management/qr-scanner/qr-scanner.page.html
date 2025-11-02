@@ -1,0 +1,19 @@
+<ion-content class="ion-padding scanner-container">
+  <div class="scanner-card">
+    <ion-icon name="qr-code-outline" class="scanner-icon"></ion-icon>
+    <h1 class="text-h2">Scan visitor passes</h1>
+    <p class="text-body">
+      Point the device towards the visitor’s QR code to verify their invite instantly.
+    </p>
+
+    <ion-button color="primary" (click)="startScanner()" [disabled]="scanning">
+      <ion-spinner name="crescent" *ngIf="scanning"></ion-spinner>
+      <span *ngIf="!scanning">Start scanning</span>
+    </ion-button>
+
+    <div class="result" *ngIf="lastScan">
+      <p class="text-small">Last scan result</p>
+      <ion-chip color="success">{{ lastScan }}</ion-chip>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1 class="text-h1">Community Command Center</h1>
+        <p class="text-body">Monitor finances, operations, and security in real time.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let metric of metrics">
+        <ion-card class="metric-card">
+          <ion-card-content>
+            <div class="header">
+              <ion-icon [name]="metric.icon" [color]="metric.color"></ion-icon>
+              <span class="label">{{ metric.title }}</span>
+            </div>
+            <div class="value">{{ metric.value }}</div>
+            <div class="trend" [class.positive]="metric.trend >= 0">
+              {{ metric.trend >= 0 ? '+' : '' }}{{ metric.trend }}% vs last month
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-lg="7">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Operations Work Queue</ion-card-title>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let item of workQueue">
+              <ion-icon slot="start" name="briefcase-outline" color="primary"></ion-icon>
+              <ion-label>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.owner }} • {{ item.module }}</p>
+              </ion-label>
+              <ion-badge slot="end" [color]="item.status === 'completed' ? 'success' : item.status === 'in-progress' ? 'warning' : 'medium'">
+                {{ item.dueDate }}
+              </ion-badge>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-lg="5">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Announcements</ion-card-title>
+            <ion-card-subtitle>Share updates with targeted audiences</ion-card-subtitle>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let announcement of announcements" lines="none">
+              <ion-label>
+                <h2>{{ announcement.title }}</h2>
+                <p>{{ announcement.body }}</p>
+              </ion-label>
+              <ion-chip color="primary" slot="end">{{ announcement.target }}</ion-chip>
+            </ion-item>
+          </ion-list>
+          <ion-button expand="block" fill="clear" routerLink="/communication/announcements">
+            Manage announcements
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

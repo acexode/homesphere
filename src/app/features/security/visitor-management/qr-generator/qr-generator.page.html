@@ -1,0 +1,42 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Create Visitor Pass</ion-card-title>
+      <ion-card-subtitle>Generate QR codes for seamless check-ins</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="inviteForm" (ngSubmit)="generate()" class="form-grid">
+        <ion-item fill="outline">
+          <ion-label position="stacked">Visitor name</ion-label>
+          <ion-input formControlName="visitorName"></ion-input>
+        </ion-item>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Visit date</ion-label>
+          <ion-datetime formControlName="visitDate" presentation="date"></ion-datetime>
+        </ion-item>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Visit time</ion-label>
+          <ion-datetime formControlName="visitTime" presentation="time"></ion-datetime>
+        </ion-item>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Purpose</ion-label>
+          <ion-select formControlName="purpose">
+            <ion-select-option value="Guest">Guest</ion-select-option>
+            <ion-select-option value="Delivery">Delivery</ion-select-option>
+            <ion-select-option value="Service">Service / Maintenance</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item fill="outline">
+          <ion-label position="stacked">Vehicle number (optional)</ion-label>
+          <ion-input formControlName="vehicleNumber"></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit">Generate QR Code</ion-button>
+      </form>
+
+      <div class="qr-preview" *ngIf="generatedCode">
+        <ngx-qrcode [qrc-value]="generatedCode"></ngx-qrcode>
+        <p class="text-small">Share this QR with the visitor. It expires after check-in.</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

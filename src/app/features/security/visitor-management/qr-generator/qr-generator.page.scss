@@ -1,0 +1,12 @@
+.form-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.qr-preview {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  ngx-qrcode {
+    margin: 0 auto var(--spacing-md);
+  }
+}

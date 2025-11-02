@@ -56,6 +56,10 @@ export class AuthService {
       );
   }
 
+  requestPasswordReset(email: string): Observable<void> {
+    return this.http.post<void>(`${environment.apiUrl}/${environment.apiVersion}/auth/forgot-password`, { email });
+  }
+
   register(payload: Partial<User>): Observable<User> {
     return this.http.post<User>(`${environment.apiUrl}/${environment.apiVersion}/auth/register`, payload);
   }

@@ -1,0 +1,30 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Vehicle Registry</ion-card-title>
+      <ion-card-subtitle>Monitor authorized slots and visitor parking</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="vehicle-table">
+        <ion-row class="header">
+          <ion-col>Plate</ion-col>
+          <ion-col>Owner</ion-col>
+          <ion-col>Type</ion-col>
+          <ion-col>Slot</ion-col>
+          <ion-col>Status</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let vehicle of vehicles">
+          <ion-col>{{ vehicle.plate }}</ion-col>
+          <ion-col>{{ vehicle.owner }}</ion-col>
+          <ion-col>{{ vehicle.type }}</ion-col>
+          <ion-col>{{ vehicle.slot }}</ion-col>
+          <ion-col>
+            <ion-chip [color]="vehicle.status === 'Authorized' ? 'success' : vehicle.status === 'Visitor' ? 'warning' : 'danger'">
+              {{ vehicle.status }}
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
