@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Storage } from '@ionic/storage-angular';
 import { User, UserRole } from '../../models';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 
 interface LoginResponse {
   token: string;
@@ -30,12 +30,7 @@ export class AuthService {
     await this.storage.create();
     const token = await this.storage.get(this.tokenKey);
     if (token) {
-      this.loadUserProfile().subscribe({
-        error: async () => {
-          await this.storage.remove(this.tokenKey);
-          this.currentUserSubject.next(null);
-        },
-      });
+      this.loadUserProfile().subscribe();
     }
   }
 
@@ -61,12 +56,12 @@ export class AuthService {
       );
   }
 
-  register(payload: unknown): Observable<User> {
-    return this.http.post<User>(`${environment.apiUrl}/${environment.apiVersion}/auth/register`, payload);
-  }
-
   requestPasswordReset(email: string): Observable<void> {
     return this.http.post<void>(`${environment.apiUrl}/${environment.apiVersion}/auth/forgot-password`, { email });
+  }
+
+  register(payload: Partial<User>): Observable<User> {
+    return this.http.post<User>(`${environment.apiUrl}/${environment.apiVersion}/auth/register`, payload);
   }
 
   loadUserProfile(): Observable<User> {

@@ -27,6 +27,7 @@ The design system leverages an Inter-based typography scale, a blue primary pale
 
 The `AuthService` manages token persistence through Ionic Storage, exposes reactive user state, and provides helpers for role-based access via the `AuthGuard`.
 
+
 ## Feature Overview
 
 The app ships with fully scaffolded modules representing each pillar of a modern gated community platform:
@@ -41,3 +42,4 @@ The app ships with fully scaffolded modules representing each pillar of a modern
 - **Notification Center** – A unified feed aggregating alerts from security, finance, helpdesk, and community channels.
 
 Each module follows the shared design system to maintain a cohesive, Airbnb-inspired experience across the entire application.
+
