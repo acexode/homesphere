@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pending Approvals</ion-card-title>
+      <ion-card-subtitle>Send instant approvals to the gate</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let request of requests" lines="full">
+        <ion-label>
+          <h2>{{ request.visitorName }}</h2>
+          <p>{{ request.resident }} • {{ request.reason }}</p>
+          <p class="muted">Requested {{ request.submittedAt }}</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="success" (click)="updateStatus(request, 'Approved')">
+            <ion-icon name="checkmark"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" (click)="updateStatus(request, 'Rejected')">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-badge
+          slot="end"
+          [color]="request.status === 'Approved' ? 'success' : request.status === 'Rejected' ? 'danger' : 'warning'"
+        >
+          {{ request.status }}
+        </ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

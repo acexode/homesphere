@@ -1,0 +1,20 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Helpdesk tickets</ion-card-title>
+      <ion-card-subtitle>Prioritize urgent issues and SLAs</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let ticket of tickets" routerLink="/helpdesk/ticket-detail">
+        <ion-label>
+          <h2>{{ ticket.id }} — {{ ticket.category }}</h2>
+          <p>{{ ticket.requester }} • {{ ticket.createdAt }}</p>
+        </ion-label>
+        <ion-badge slot="end" [color]="ticket.status === 'Resolved' ? 'success' : ticket.status === 'In Progress' ? 'warning' : 'danger'">
+          {{ ticket.status }}
+        </ion-badge>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="primary" routerLink="/helpdesk/create-ticket">Create new ticket</ion-button>
+  </ion-card>
+</ion-content>

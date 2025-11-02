@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Preferred vendors</ion-card-title>
+      <ion-card-subtitle>Trusted service providers rated by residents</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let vendor of vendors">
+        <ion-label>
+          <h2>{{ vendor.name }}</h2>
+          <p>{{ vendor.service }}</p>
+          <ion-chip color="success">★ {{ vendor.rating }}</ion-chip>
+        </ion-label>
+        <ion-button slot="end" fill="clear">
+          <ion-icon name="call-outline"></ion-icon>
+          {{ vendor.contact }}
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

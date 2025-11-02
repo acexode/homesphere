@@ -1,0 +1,7 @@
+{
+  "name": "gated-community-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,27 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ ticket.id }} — {{ ticket.category }}</ion-card-title>
+      <ion-card-subtitle>{{ ticket.createdAt }} • Assigned to {{ ticket.assignedTo }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-body">{{ ticket.description }}</p>
+      <ion-chip color="warning">{{ ticket.status }}</ion-chip>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Activity timeline</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let event of timeline">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>
+          <h2>{{ event.time }}</h2>
+          <p>{{ event.text }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

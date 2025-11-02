@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Broadcast announcements</ion-card-title>
+      <ion-card-subtitle>Target specific towers, roles, or the whole community</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let announcement of announcements">
+        <ion-label>
+          <h2>{{ announcement.title }}</h2>
+          <p>{{ announcement.audience }}</p>
+        </ion-label>
+        <ion-badge slot="end" [color]="announcement.status === 'Sent' ? 'success' : announcement.status === 'Scheduled' ? 'warning' : 'medium'">
+          {{ announcement.status }}
+        </ion-badge>
+        <ion-note slot="end">{{ announcement.schedule }}</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="primary">Create announcement</ion-button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resident feedback</ion-card-title>
+      <ion-card-subtitle>Improve service quality with ratings</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let feedback of feedbacks">
+        <ion-label>
+          <h2>{{ feedback.ticketId }} — {{ feedback.submittedBy }}</h2>
+          <p>{{ feedback.comments }}</p>
+          <div class="stars">
+            <ion-icon name="star" *ngFor="let _ of createArray(feedback.rating)"></ion-icon>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

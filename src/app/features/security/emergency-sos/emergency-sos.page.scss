@@ -1,0 +1,15 @@
+.sos-panel {
+  .status-strip {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--ion-color-success);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.15);
+  }
+}

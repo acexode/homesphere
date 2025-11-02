@@ -1,0 +1,19 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Facility bookings</ion-card-title>
+      <ion-card-subtitle>Reserve shared amenities in seconds</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let slot of slots">
+        <ion-label>
+          <h2>{{ slot.facility }}</h2>
+          <p>{{ slot.slot }}</p>
+        </ion-label>
+        <ion-badge slot="end" [color]="slot.status === 'Available' ? 'success' : 'medium'">{{ slot.status }}</ion-badge>
+        <ion-note slot="end">{{ slot.price | currency }}</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="primary">Book a facility</ion-button>
+  </ion-card>
+</ion-content>

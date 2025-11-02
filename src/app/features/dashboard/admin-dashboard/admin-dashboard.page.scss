@@ -1,0 +1,31 @@
+.metric-card {
+  .header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--ion-color-medium);
+  }
+
+  .value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: var(--spacing-sm) 0;
+  }
+
+  .trend {
+    color: var(--ion-color-danger);
+    &.positive {
+      color: var(--ion-color-success);
+    }
+  }
+}
+
+ion-list {
+  ion-item {
+    --padding-start: var(--spacing-md);
+    --padding-end: var(--spacing-md);
+    h2 {
+      font-weight: 600;
+    }
+  }
+}

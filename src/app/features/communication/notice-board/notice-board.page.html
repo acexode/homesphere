@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Digital notice board</ion-card-title>
+      <ion-card-subtitle>Inform residents about upcoming events</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let notice of notices">
+        <ion-label>
+          <h2>{{ notice.title }}</h2>
+          <p>{{ notice.description }}</p>
+        </ion-label>
+        <ion-note slot="end">{{ notice.publishedOn }}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

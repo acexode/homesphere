@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Financial Statements</ion-card-title>
+      <ion-card-subtitle>Transparent reporting for residents</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let statement of statements">
+          <ion-icon slot="start" name="document-text-outline" color="primary"></ion-icon>
+          <ion-label>
+            <h2>{{ statement.month }}</h2>
+            <p>Income {{ statement.income | currency }} • Expenses {{ statement.expenses | currency }}</p>
+          </ion-label>
+          <ion-badge slot="end" [color]="statement.surplus >= 0 ? 'success' : 'danger'">
+            Surplus {{ statement.surplus | currency }}
+          </ion-badge>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" fill="outline">Download PDF statements</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

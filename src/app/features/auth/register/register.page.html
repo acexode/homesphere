@@ -1,0 +1,77 @@
+<ion-content class="ion-padding register-content">
+  <div class="register-container">
+    <h1 class="text-h1">Create your account</h1>
+    <p class="text-body">
+      Join your community to manage visitors, amenities, and more in one place.
+    </p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">First Name</ion-label>
+              <ion-input formControlName="firstName"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Last Name</ion-label>
+              <ion-input formControlName="lastName"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Phone</ion-label>
+              <ion-input type="tel" formControlName="phone"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Role</ion-label>
+              <ion-select formControlName="role">
+                <ion-select-option *ngFor="let role of roles" [value]="role.value">
+                  {{ role.label }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item fill="outline" class="form-field">
+              <ion-label position="stacked">Unit Number</ion-label>
+              <ion-input formControlName="unitNumber"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="block" type="submit" [disabled]="registerForm.invalid || loading">
+        <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+        <span *ngIf="!loading">Create Account</span>
+      </ion-button>
+
+      <div class="login-redirect">
+        <span>Already have an account?</span>
+        <ion-button fill="clear" routerLink="/auth/login">Sign in</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

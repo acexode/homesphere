@@ -1,0 +1,66 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1 class="text-h1">Good afternoon, Jane</h1>
+        <p class="text-body">Here’s what’s happening in your community today.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="3" *ngFor="let stat of communityStats">
+        <ion-card class="stat-card">
+          <ion-card-header>
+            <ion-icon [name]="stat.icon"></ion-icon>
+            <ion-card-subtitle>{{ stat.label }}</ion-card-subtitle>
+            <ion-card-title>{{ stat.value }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <span class="trend" [class.up]="stat.trend >= 0">{{ stat.trend >= 0 ? '+' : '' }}{{ stat.trend }}%</span>
+            <span class="trend-label">vs yesterday</span>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-lg="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Community Activity</ion-card-title>
+            <ion-card-subtitle>Real-time updates from security, finance, and support</ion-card-subtitle>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let activity of activityFeed">
+              <ion-icon slot="start" [name]="activity.type === 'security' ? 'shield-checkmark-outline' : activity.type === 'finance' ? 'card-outline' : activity.type === 'helpdesk' ? 'construct-outline' : 'megaphone-outline'" [color]="activity.type === 'finance' ? 'warning' : activity.type === 'security' ? 'primary' : activity.type === 'helpdesk' ? 'success' : 'tertiary'"></ion-icon>
+              <ion-label>
+                <h2>{{ activity.title }}</h2>
+                <p>{{ activity.description }}</p>
+              </ion-label>
+              <ion-note slot="end">{{ activity.timestamp }}</ion-note>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-lg="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Quick Actions</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6" *ngFor="let action of quickActions">
+                  <ion-button expand="block" [color]="action.color" [routerLink]="action.route" class="quick-action">
+                    <ion-icon slot="start" [name]="action.icon"></ion-icon>
+                    {{ action.label }}
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
