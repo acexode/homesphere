@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Preferences</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Push notifications</ion-label>
+          <ion-toggle [(ngModel)]="notificationSettings.push"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email updates</ion-label>
+          <ion-toggle [(ngModel)]="notificationSettings.email"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>SMS alerts</ion-label>
+          <ion-toggle [(ngModel)]="notificationSettings.sms"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

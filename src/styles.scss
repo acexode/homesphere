@@ -1,0 +1,17 @@
+@import 'theme/variables';
+@import 'theme/typography';
+
+body,
+html,
+app-root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ion-font-family);
+  background: var(--ion-color-light, #f9fafb);
+}
+
+ion-content {
+  --background: var(--ion-color-light, #f9fafb);
+}

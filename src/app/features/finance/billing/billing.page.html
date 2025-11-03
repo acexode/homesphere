@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Maintenance Invoices</ion-card-title>
+      <ion-card-subtitle>Automated billing for all residents</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="invoice-table">
+        <ion-row class="header">
+          <ion-col>Invoice</ion-col>
+          <ion-col>Unit</ion-col>
+          <ion-col>Amount</ion-col>
+          <ion-col>Due Date</ion-col>
+          <ion-col>Status</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let invoice of invoices">
+          <ion-col>{{ invoice.id }}</ion-col>
+          <ion-col>{{ invoice.unit }}</ion-col>
+          <ion-col>{{ invoice.amount | currency }}</ion-col>
+          <ion-col>{{ invoice.dueDate }}</ion-col>
+          <ion-col>
+            <ion-badge [color]="invoice.status === 'Paid' ? 'success' : invoice.status === 'Pending' ? 'warning' : 'danger'">
+              {{ invoice.status }}
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button expand="block" color="primary" fill="outline">Generate billing cycle</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

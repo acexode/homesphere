@@ -1,0 +1,42 @@
+<ion-content class="ion-padding">
+  <ion-card class="sos-panel">
+    <ion-card-header>
+      <ion-card-title>Emergency Control Center</ion-card-title>
+      <ion-card-subtitle>Coordinate real-time response and escalation</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="status-strip">
+        <div class="indicator"></div>
+        <div>
+          <h2 class="text-h3">No active incidents</h2>
+          <p class="text-small">You’ll be alerted instantly when an SOS is triggered.</p>
+        </div>
+        <ion-button size="small" color="primary" routerLink="/communication/announcements">
+          Broadcast alert
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recent SOS Events</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let event of sosHistory">
+        <ion-icon slot="start" name="alert-circle-outline" color="danger"></ion-icon>
+        <ion-label>
+          <h2>{{ event.type }} assistance</h2>
+          <p>{{ event.resident }} • {{ event.location }}</p>
+        </ion-label>
+        <ion-note slot="end">{{ event.time }}</ion-note>
+        <ion-chip
+          slot="end"
+          [color]="event.status === 'Resolved' ? 'success' : event.status === 'Acknowledged' ? 'warning' : 'danger'"
+        >
+          {{ event.status }}
+        </ion-chip>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

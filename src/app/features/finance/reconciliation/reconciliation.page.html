@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bank reconciliation</ion-card-title>
+      <ion-card-subtitle>Match receipts against ledger entries</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class="recon-table">
+        <ion-row class="header">
+          <ion-col>Bank Ref</ion-col>
+          <ion-col>Ledger Ref</ion-col>
+          <ion-col>Amount</ion-col>
+          <ion-col>Status</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let item of items">
+          <ion-col>{{ item.bankReference }}</ion-col>
+          <ion-col>{{ item.ledgerReference }}</ion-col>
+          <ion-col>{{ item.amount | currency }}</ion-col>
+          <ion-col>
+            <ion-chip [color]="item.status === 'Matched' ? 'success' : 'danger'">{{ item.status }}</ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

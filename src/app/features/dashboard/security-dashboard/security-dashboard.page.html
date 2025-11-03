@@ -1,0 +1,72 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1 class="text-h1">Security Operations</h1>
+        <p class="text-body">Monitor visitor flows, patrols, and emergency readiness.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-lg="7">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Gate Activity</ion-card-title>
+            <ion-card-subtitle>Approve, verify, and track all visitors</ion-card-subtitle>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let activity of gateActivities">
+              <ion-icon slot="start" name="qr-code-outline" color="primary"></ion-icon>
+              <ion-label>
+                <h2>{{ activity.visitor }} → {{ activity.resident }}</h2>
+                <p>{{ activity.purpose }}</p>
+              </ion-label>
+              <ion-chip slot="end" [color]="activity.status === 'checked-in' ? 'success' : activity.status === 'scheduled' ? 'warning' : 'medium'">
+                {{ activity.time }}
+              </ion-chip>
+            </ion-item>
+          </ion-list>
+          <ion-button expand="block" fill="clear" routerLink="/security/visitor-list">
+            Open visitor management
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-lg="5">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Guard Patrols</ion-card-title>
+            <ion-card-subtitle>Real-time tracking of patrol teams</ion-card-subtitle>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let patrol of patrolRoutes">
+              <ion-icon slot="start" name="walk-outline" color="tertiary"></ion-icon>
+              <ion-label>
+                <h2>{{ patrol.name }}</h2>
+                <p>{{ patrol.checkpoints }} checkpoints • Next: {{ patrol.nextCheckpoint }}</p>
+              </ion-label>
+              <ion-badge slot="end" [color]="patrol.status === 'on-track' ? 'success' : 'warning'">
+                {{ patrol.status === 'on-track' ? 'On Track' : 'Delayed' }}
+              </ion-badge>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Emergency Contacts</ion-card-title>
+          </ion-card-header>
+          <ion-list>
+            <ion-item *ngFor="let contact of emergencyContacts" lines="full">
+              <ion-icon slot="start" name="call-outline" color="danger"></ion-icon>
+              <ion-label>
+                <h2>{{ contact.name }}</h2>
+                <p>{{ contact.phone }}</p>
+              </ion-label>
+              <ion-chip color="medium" slot="end">{{ contact.type }}</ion-chip>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

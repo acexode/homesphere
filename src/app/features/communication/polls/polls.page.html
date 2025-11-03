@@ -1,0 +1,18 @@
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let poll of polls">
+    <ion-card-header>
+      <ion-card-title>{{ poll.question }}</ion-card-title>
+      <ion-card-subtitle>Vote closes in 3 days</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let option of poll.options">
+          <ion-label>{{ option.label }}</ion-label>
+          <ion-progress-bar [value]="option.votes / getTotalVotes(poll)"></ion-progress-bar>
+          <ion-note slot="end">{{ option.votes }} votes</ion-note>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary">Submit vote</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

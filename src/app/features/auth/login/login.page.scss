@@ -1,0 +1,105 @@
+.login-content {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+
+  .app-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-900);
+  }
+
+  .subtitle {
+    color: var(--color-gray-600);
+  }
+}
+
+.login-form {
+  .input-group {
+    margin-bottom: var(--spacing-lg);
+
+    .input-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-gray-900);
+    }
+
+    .custom-input {
+      --background: var(--color-gray-100);
+      --border-radius: var(--border-radius-sm);
+      --padding-start: var(--spacing-md);
+      --padding-end: var(--spacing-md);
+      min-height: 48px;
+      border: 1px solid var(--color-gray-200);
+
+      &.input-error {
+        border-color: var(--ion-color-danger);
+      }
+
+      &:focus-within {
+        border-color: var(--ion-color-primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+    }
+
+    .error-text {
+      display: block;
+      margin-top: var(--spacing-xs);
+      font-size: 0.75rem;
+    }
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .login-button,
+  .biometric-button {
+    --border-radius: var(--border-radius-sm);
+    height: 48px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .login-button {
+    font-weight: 600;
+    margin-top: var(--spacing-md);
+  }
+
+  .biometric-button {
+    margin-top: var(--spacing-md);
+  }
+}
+
+.register-section {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+
+  p {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gray-600);
+  }
+}

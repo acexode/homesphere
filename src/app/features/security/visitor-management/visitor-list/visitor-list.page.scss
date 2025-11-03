@@ -1,0 +1,12 @@
+ion-item {
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+
+  h2 {
+    font-weight: 600;
+  }
+
+  .time {
+    color: var(--ion-color-medium);
+  }
+}

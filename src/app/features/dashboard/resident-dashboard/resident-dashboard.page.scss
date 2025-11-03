@@ -1,0 +1,41 @@
+.stat-card {
+  ion-card-header {
+    display: grid;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  ion-icon {
+    font-size: 1.8rem;
+    color: var(--ion-color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  ion-card-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .trend {
+    font-weight: 600;
+    &.up {
+      color: var(--ion-color-success);
+    }
+    &:not(.up) {
+      color: var(--ion-color-danger);
+    }
+  }
+
+  .trend-label {
+    color: var(--ion-color-medium);
+    margin-left: var(--spacing-xs);
+  }
+}
+
+.quick-action {
+  height: 100%;
+  white-space: normal;
+  text-align: left;
+  --border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+}

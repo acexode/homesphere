@@ -1,0 +1,25 @@
+.app-shell {
+  height: 100%;
+  background: var(--ion-background-color, #f9fafb);
+}
+
+ion-menu {
+  --width: 260px;
+}
+
+ion-list-header {
+  font-weight: 600;
+  color: var(--ion-color-primary);
+}
+
+ion-item {
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+  --border-radius: var(--border-radius-sm);
+  margin: 0 var(--spacing-md) var(--spacing-sm);
+}
+
+.menu-placeholder {
+  padding: var(--spacing-lg);
+  text-align: center;
+}

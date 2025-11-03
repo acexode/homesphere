@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>HomeSphere</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list inset *ngIf="visibleLinks.length > 0; else signedOutMenu">
+          <ion-list-header>Navigation</ion-list-header>
+          <ion-item
+            *ngFor="let link of visibleLinks"
+            [routerLink]="link.route"
+            routerDirection="root"
+          >
+            <ion-icon slot="start" [name]="link.icon"></ion-icon>
+            <ion-label>{{ link.label }}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ng-template #signedOutMenu>
+          <div class="menu-placeholder">
+            <ion-text color="medium">Sign in to access modules</ion-text>
+          </div>
+        </ng-template>
+      </ion-content>
+    </ion-menu>
+    <div class="app-shell" id="main-content">
+      <ion-router-outlet></ion-router-outlet>
+    </div>
+  </ion-split-pane>
+</ion-app>
