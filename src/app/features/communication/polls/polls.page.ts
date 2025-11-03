@@ -6,6 +6,7 @@ interface Poll {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-polls',
   templateUrl: './polls.page.html',
   styleUrls: ['./polls.page.scss'],

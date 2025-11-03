@@ -8,6 +8,7 @@ interface StatementRecord {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-statements',
   templateUrl: './statements.page.html',
   styleUrls: ['./statements.page.scss'],

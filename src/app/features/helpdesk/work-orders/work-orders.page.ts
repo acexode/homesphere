@@ -8,6 +8,7 @@ interface WorkOrder {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-work-orders',
   templateUrl: './work-orders.page.html',
   styleUrls: ['./work-orders.page.scss'],

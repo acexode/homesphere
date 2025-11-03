@@ -10,6 +10,7 @@ interface StaffMember {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-staff-management',
   templateUrl: './staff-management.page.html',
   styleUrls: ['./staff-management.page.scss'],

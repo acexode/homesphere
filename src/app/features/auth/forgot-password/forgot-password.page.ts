@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/core/auth/services/auth.service';
 
 @Component({
+  standalone: false,
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.page.html',
   styleUrls: ['./forgot-password.page.scss'],

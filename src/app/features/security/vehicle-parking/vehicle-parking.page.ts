@@ -12,6 +12,7 @@ interface VehicleEntry {
   selector: 'app-vehicle-parking',
   templateUrl: './vehicle-parking.page.html',
   styleUrls: ['./vehicle-parking.page.scss'],
+  standalone: false
 })
 export class VehicleParkingPage {
   vehicles: VehicleEntry[] = [

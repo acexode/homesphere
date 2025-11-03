@@ -9,6 +9,7 @@ interface TicketItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-ticket-list',
   templateUrl: './ticket-list.page.html',
   styleUrls: ['./ticket-list.page.scss'],

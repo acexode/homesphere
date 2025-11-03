@@ -7,6 +7,7 @@ interface PaymentOption {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-payments',
   templateUrl: './payments.page.html',
   styleUrls: ['./payments.page.scss'],

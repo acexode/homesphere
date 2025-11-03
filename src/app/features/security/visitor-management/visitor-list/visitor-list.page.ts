@@ -12,6 +12,7 @@ interface VisitorRecord {
   selector: 'app-visitor-list',
   templateUrl: './visitor-list.page.html',
   styleUrls: ['./visitor-list.page.scss'],
+  standalone: false
 })
 export class VisitorListPage {
   visitors: VisitorRecord[] = [

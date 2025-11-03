@@ -7,6 +7,7 @@ interface NoticeItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-notice-board',
   templateUrl: './notice-board.page.html',
   styleUrls: ['./notice-board.page.scss'],

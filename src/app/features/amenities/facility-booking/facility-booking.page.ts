@@ -8,6 +8,7 @@ interface FacilitySlot {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-facility-booking',
   templateUrl: './facility-booking.page.html',
   styleUrls: ['./facility-booking.page.scss'],

@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/core/auth/services/auth.service';
 import { User } from 'src/app/core/models';
 
 @Component({
+  standalone: false,
   selector: 'app-view-profile',
   templateUrl: './view-profile.page.html',
   styleUrls: ['./view-profile.page.scss'],

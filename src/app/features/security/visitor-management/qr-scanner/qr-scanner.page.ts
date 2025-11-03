@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.page.html',
   styleUrls: ['./qr-scanner.page.scss'],

@@ -8,6 +8,7 @@ interface Announcement {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-announcements',
   templateUrl: './announcements.page.html',
   styleUrls: ['./announcements.page.scss'],

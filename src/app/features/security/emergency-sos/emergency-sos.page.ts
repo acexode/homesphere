@@ -9,6 +9,7 @@ interface SosEvent {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-emergency-sos',
   templateUrl: './emergency-sos.page.html',
   styleUrls: ['./emergency-sos.page.scss'],

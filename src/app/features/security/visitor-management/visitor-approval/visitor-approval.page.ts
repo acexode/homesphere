@@ -9,6 +9,7 @@ interface ApprovalRequest {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-visitor-approval',
   templateUrl: './visitor-approval.page.html',
   styleUrls: ['./visitor-approval.page.scss'],

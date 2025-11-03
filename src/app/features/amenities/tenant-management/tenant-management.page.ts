@@ -8,6 +8,7 @@ interface TenantRecord {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-tenant-management',
   templateUrl: './tenant-management.page.html',
   styleUrls: ['./tenant-management.page.scss'],

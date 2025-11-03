@@ -8,6 +8,7 @@ interface Thread {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-forums',
   templateUrl: './forums.page.html',
   styleUrls: ['./forums.page.scss'],

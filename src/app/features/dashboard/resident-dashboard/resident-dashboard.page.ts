@@ -15,6 +15,7 @@ interface ActivityItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-resident-dashboard',
   templateUrl: './resident-dashboard.page.html',
   styleUrls: ['./resident-dashboard.page.scss'],

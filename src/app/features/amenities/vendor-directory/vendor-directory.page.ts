@@ -8,6 +8,7 @@ interface Vendor {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-vendor-directory',
   templateUrl: './vendor-directory.page.html',
   styleUrls: ['./vendor-directory.page.scss'],

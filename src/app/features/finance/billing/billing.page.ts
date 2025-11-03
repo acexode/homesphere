@@ -9,6 +9,7 @@ interface Invoice {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-billing',
   templateUrl: './billing.page.html',
   styleUrls: ['./billing.page.scss'],

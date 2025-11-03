@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-ticket-detail',
   templateUrl: './ticket-detail.page.html',
   styleUrls: ['./ticket-detail.page.scss'],

@@ -8,6 +8,7 @@ interface UtilityMeter {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-utility-vending',
   templateUrl: './utility-vending.page.html',
   styleUrls: ['./utility-vending.page.scss'],

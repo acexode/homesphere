@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-qr-generator',
   templateUrl: './qr-generator.page.html',
   styleUrls: ['./qr-generator.page.scss'],
+  standalone: false
 })
 export class QrGeneratorPage {
   inviteForm: FormGroup;

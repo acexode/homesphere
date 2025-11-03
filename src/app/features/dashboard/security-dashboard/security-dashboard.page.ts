@@ -16,6 +16,7 @@ interface PatrolRoute {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-security-dashboard',
   templateUrl: './security-dashboard.page.html',
   styleUrls: ['./security-dashboard.page.scss'],

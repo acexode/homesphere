@@ -8,6 +8,7 @@ interface FeedbackItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-feedback',
   templateUrl: './feedback.page.html',
   styleUrls: ['./feedback.page.scss'],

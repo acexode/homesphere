@@ -8,6 +8,7 @@ interface LogEntry {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-security-logbook',
   templateUrl: './security-logbook.page.html',
   styleUrls: ['./security-logbook.page.scss'],

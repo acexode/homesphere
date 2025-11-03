@@ -8,6 +8,7 @@ interface NotificationItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-notification-center',
   templateUrl: './notification-center.page.html',
   styleUrls: ['./notification-center.page.scss'],

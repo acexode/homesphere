@@ -8,6 +8,7 @@ interface ReconciliationItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-reconciliation',
   templateUrl: './reconciliation.page.html',
   styleUrls: ['./reconciliation.page.scss'],

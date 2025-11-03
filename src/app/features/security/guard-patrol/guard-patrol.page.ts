@@ -7,6 +7,7 @@ interface PatrolCheckpoint {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-guard-patrol',
   templateUrl: './guard-patrol.page.html',
   styleUrls: ['./guard-patrol.page.scss'],

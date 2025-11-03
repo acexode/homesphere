@@ -6,6 +6,7 @@ import { AuthService } from '../../../core/auth/services/auth.service';
 import { UserRole } from '../../../core/models';
 
 @Component({
+  standalone: false,
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss']

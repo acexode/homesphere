@@ -17,6 +17,7 @@ interface WorkItem {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.page.html',
   styleUrls: ['./admin-dashboard.page.scss'],
